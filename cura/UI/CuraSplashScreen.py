@@ -70,7 +70,7 @@ class CuraSplashScreen(QSplashScreen):
         font = QFont()  # Using system-default font here
         font.setPixelSize(18)
         painter.setFont(font)
-        painter.drawText(60, 70 + self._version_y_offset, 330 * self._scale, 230 * self._scale, Qt.AlignLeft | Qt.AlignTop, version[0])
+        painter.drawText(80, 80 + self._version_y_offset, 330 * self._scale, 230 * self._scale, Qt.AlignLeft | Qt.AlignTop, version[0])
         if len(version) > 1:
             font.setPixelSize(16)
             painter.setFont(font)

@@ -233,6 +233,7 @@ class WelcomePagesModel(ListModel):
                 self.shouldShowWelcomeFlowChanged.emit()
 
         # All pages
+        '''
         all_pages_list = [{"id": "welcome",
                            "page_url": self._getBuiltinWelcomePagePath("WelcomeContent.qml"),
                            },
@@ -261,6 +262,22 @@ class WelcomePagesModel(ListModel):
                            "page_url": self._getBuiltinWelcomePagePath("AddCloudPrintersView.qml"),
                            "is_final_page": True,  # If we end up in this page, the next button will close the dialog
                            "next_page_button_text": self._catalog.i18nc("@action:button", "Finish"),
+                           },
+                          {"id": "machine_actions",
+                           "page_url": self._getBuiltinWelcomePagePath("FirstStartMachineActionsContent.qml"),
+                           "should_show_function": self.shouldShowMachineActions,
+                           },
+                          ]
+        '''
+        all_pages_list = [{"id": "welcome",
+                           "page_url": self._getBuiltinWelcomePagePath("WelcomeContent.qml"),
+                           },
+                          {"id": "user_agreement",
+                           "page_url": self._getBuiltinWelcomePagePath("UserAgreementContent.qml"),
+                           },
+                          {"id": "add_network_or_local_printer",
+                           "page_url": self._getBuiltinWelcomePagePath("AddNetworkOrLocalPrinterContent.qml"),
+                           "next_page_id": "machine_actions",
                            },
                           {"id": "machine_actions",
                            "page_url": self._getBuiltinWelcomePagePath("FirstStartMachineActionsContent.qml"),
